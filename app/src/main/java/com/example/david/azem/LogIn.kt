@@ -13,10 +13,14 @@ class LogIn : AppCompatActivity()
         {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_log_in)
-
-
+            
+                LoginVM VM = new LoginVM();
+             
             login.setOnClickListener {
-
+                var userName = userName.text;
+                var password = password.text;
+                boolean loginSucess = VM.loginAttempt(userName,password);
+                    
             }
         }
 }
